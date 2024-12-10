@@ -1,10 +1,11 @@
 #include <iostream>
 #include <fstream>
-#include <cstdlib>
+
+using namespace std;
 
 const int NUM_USERS = 400;
 const int NUM_MOVIES = 500;
-const std::string OUTPUT_FILE = "train.csv";
+const string OUTPUT_FILE = "rating.csv";
 
 int generateRating()
 {
@@ -16,10 +17,10 @@ int generateRating()
 
 int main()
 {
-    std::ofstream outFile(OUTPUT_FILE);
+    ofstream outFile(OUTPUT_FILE);
     if (!outFile.is_open())
     {
-        std::cerr << "Error: Unable to open file " << OUTPUT_FILE << std::endl;
+        cerr << "Error: Unable to open file " << OUTPUT_FILE << std::endl;
         return 1;
     }
 
@@ -37,7 +38,7 @@ int main()
 
     outFile.close();
 
-    std::cout << "Matrix successfully saved to " << OUTPUT_FILE << std::endl;
+    cout << "Matrix successfully saved to " << OUTPUT_FILE << endl;
 
     return 0;
 }
